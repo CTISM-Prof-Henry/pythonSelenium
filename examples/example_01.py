@@ -4,7 +4,7 @@ import time
 
 
 def main():
-    driver = webdriver.Chrome()  # abre uma nova instância do Google Chrome
+    driver = webdriver.Firefox()  # abre uma nova instância do navegador
     time.sleep(2)
     driver.get("https://www.google.com.br")  # acessa a página
     time.sleep(2)
@@ -15,7 +15,7 @@ def main():
     time.sleep(2)
     elem.send_keys(Keys.RETURN)  # aperta enter
     time.sleep(2)
-    driver.close()  # fecha a janela do Chrome
+    driver.close()  # fecha a janela do navegador
 
 
 if __name__ == '__main__':
