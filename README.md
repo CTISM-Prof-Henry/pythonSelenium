@@ -5,11 +5,20 @@ Selenium é um framework escrito em Python para automação de testes unitários
 Selenium faz uso do DOM -- [Document Object Model](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
 para navegar pela Web, interagindo com os elementos HTML da página.
 
+## Instruções
+
+1. Clone este repositório na sua máquina.
+2. Abra a linha de comando.
+3. Digite `conda create --name test`. 
+    * Caso perguntado para prosseguir, diga que sim (pressione `y` e então `ENTER`)
+4. Ative o ambiente virtual: `conda activate test`
+5. Instale a bibloteca _selenium_: `conda install selenium`
+    * Caso perguntado para prosseguir, diga que sim (pressione `y` e então `ENTER`)
+6. Baixe o [GeckoDriver](https://github.com/mozilla/geckodriver/releases) e coloque-o na pasta `examples`
+
 ## Exercícios
 
-1. Execute o script [examples/example_01.py](examples/example_01.py).
-    * Nota: talvez seja preciso baixar o [ChromeDriver](https://chromedriver.chromium.org/downloads) e colocá-lo na mesma
-      pasta deste projeto.
+1. Execute o script [examples/example_01.py](examples/example_01.py), a partir da pasta `examples`
     * O que acontece quando o código é executado?
 2. Execute o script [examples/example_02.py](examples/example_02.py).
     * Qual a diferença dele para o exemplo_01?
