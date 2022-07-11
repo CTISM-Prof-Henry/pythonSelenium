@@ -1,20 +1,37 @@
 # Selenium
 
-Selenium é um framework escrito em Python para automação de testes unitários.
+## Sumário
 
-Selenium faz uso do DOM -- [Document Object Model](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
-para navegar pela Web, interagindo com os elementos HTML da página.
+* [Introdução](#introdução)
+* [Exercícios](#exercícios)
+
+## Introdução
+
+Selenium é uma biblioteca escrita em Python para automatização de testes 
+unitários. Quando construímos sites para Web (usando as tecnologias HTML, CSS e
+Javascript), por vezes precisamos testar se as funcionalidades estão funcionando
+corretamente. Por exemplo, quando apertamos o botão de login no site, ele 
+realmente faz login?
+
+Para estas tarefas, podemos usar selenium, que automatiza o processo de testagem,
+e evita que testadores humanos precisem fazer este trabalho monótono e cansativo.
+
+Por manipular a parte gráfica de uma página Web, também é possível usar selenium
+para programar _web crawlers_, programas de computador que vasculham sites em 
+busca de coletar informações.
+
+Selenium faz uso do DOM - [Document Object Model](
+https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
+para manipular as páginas Web. É possível usar o DOM a partir de qualquer 
+navegador, abrindo a aba console, com a tecla F12.
 
 ## Instruções
 
-1. Clone este repositório na sua máquina.
-2. Abra a linha de comando.
-3. Digite `conda create --name test`. 
-    * Caso perguntado para prosseguir, diga que sim (pressione `y` e então `ENTER`)
-4. Ative o ambiente virtual: `conda activate test`
-5. Instale a bibloteca _selenium_: `conda install selenium`
-    * Caso perguntado para prosseguir, diga que sim (pressione `y` e então `ENTER`)
-6. Baixe o [GeckoDriver](https://github.com/mozilla/geckodriver/releases) e coloque-o na pasta `examples`
+1. Clone este repositório na sua máquina
+2. [Crie um ambiente virtual para trabalhar](https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md)
+3. Instale a bibloteca _selenium_: `conda install selenium --yes`
+4. Baixe o [GeckoDriver](https://github.com/mozilla/geckodriver/releases) 
+   e coloque-o na pasta `examples`
 
 ## Exercícios
 
