@@ -178,16 +178,27 @@ O código está disponível no arquivo [dragon_ball.py](dragon_ball.py).
 1. Execute o script [atividades/exemplo_01.py](atividades/exemplo_01.py), a
    partir da pasta `atividades`
     * O que acontece quando o código é executado?
-2. Execute o script [atividades/exemplo_02.py](atividades/exemplo_02.py).
+2. Analise o código-fonte do script
+   [atividades/exemplo_02.py](atividades/exemplo_02.py).
+   * Qual a diferença dele para o exemplo_01?
+3. Modifique o exemplo_02 de forma que o código em Python abra o primeiro link 
+   retornado pela busca, e execute o vídeo.
+4. Analise o código-fonte do script 
+   [atividades/exemplo_03.py](atividades/exemplo_03.py).
     * Qual a diferença dele para o exemplo_01?
     * Abra a página do [Google](https://google.com.br). Sobre o botão 
       "Pesquisa Google", clique com o botão direito e selecione a opção 
-      "Inspecionar". No console que se abre, na aba "Elements", procure pela 
-      propriedade `value`. O que está escrito nesta propriedade?
-      Como isto se relaciona com o que está escrito no código do exemplo_02?
-3. Descomente o comentário do exemplo_02 da linha 25. Execute o código novamente. 
+      "Inspecionar". No console que se abre, na aba **Elements** 
+      (se você estiver usando o Chrome) ou **Inspetor** (Firefox), procure pela 
+      propriedade `value`. O que está escrito nesta propriedade? Como isto se 
+      relaciona com o que está escrito no código do exemplo_03?
+    * Aqui, se você não conseguiu achar:
+      ```html
+      <input class="gNO89b" value="Pesquisa Google" aria-label="Pesquisa Google"
+      name="btnK" role="button" tabindex="0" type="submit" 
+      data-ved="0ahUKEwjsrqzA_f_4AhUwrZUCHU9sDfgQ4dUDCA0">
+      ```
+5. Retire o comentário do exemplo_03 da linha 25. Execute o código novamente. 
    Qual a mensagem de erro que aparece no console? Por que isso ocorre?
-4. Por que os programadores que fazem testes com Selenium enchem o código-fonte 
+6. Por que os programadores que fazem testes com Selenium enchem o código-fonte 
    de `time.sleep`?
-5. Modifique o exemplo_02 de forma que o código em Python abra o primeiro link 
-   retornado pela busca.

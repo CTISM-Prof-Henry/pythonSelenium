@@ -1,9 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.remote.webelement import WebElement
 import time
 import os
-
-from selenium.webdriver.remote.webelement import WebElement
 
 
 def main():

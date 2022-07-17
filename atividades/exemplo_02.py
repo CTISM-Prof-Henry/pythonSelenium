@@ -1,31 +1,36 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.remote.webelement import WebElement
 import time
+import os
 
 
 def main():
-    driver = webdriver.Firefox()  # abre uma nova instância do navegador 
+    if os.name == 'nt':  # se o sistema operacional for windows
+        path = './geckodriver.exe'  # o executável é .exe
+    else:  # se o sistema operacional for linux ou mac
+        path = './geckodriver'  # o executável não tem extensão
+
+    driver = webdriver.Firefox(executable_path=path)
     time.sleep(2)
     driver.get("https://www.google.com.br")  # acessa a página
     time.sleep(2)
-
-    botao_pesquisar = None
-    caixa_entrada = None
-
-    inputs = driver.find_elements_by_tag_name("input")
-    for some_input in inputs:
-        if some_input.get_property('value').lower() == 'pesquisa google':
-            botao_pesquisar = some_input
-        if some_input.get_property('type').lower() == 'text':
-            caixa_entrada = some_input
-
-    caixa_entrada.clear()  # limpa o texto anteriormente escrito nela - se existir
-    time.sleep(2)
-    caixa_entrada.send_keys("dj andré marques manda AQUELE ao vivo")  # escreve um texto na caixa de busta
-    # time.sleep(2)  # TODO descomente para o exercício 3
-    botao_pesquisar.click()
-    time.sleep(2)
-    driver.close()  # fecha a janela do navegador
+    elements = driver.find_elements_by_tag_name("input")  # Acha a caixa de busca
+    for elem in elements:  # type: WebElement
+        # procura a caixa de busca do google. Inspecionando ela pelo navegador, descobrimos que ela é
+        # (resumidamente)
+        # <input name="q" type="text" title="Pesquisar" value="" aria-label="Pesquisar" >
+        # portanto, estamos procurando um objeto HTML do tipo input que tenha como título a palavra 'Pesquisar'
+        if elem.get_property('title').lower() == 'pesquisar':
+            elem.clear()  # limpa o texto anteriormente escrito nela - se existir
+            time.sleep(2)
+            # escreve um texto na caixa de busta
+            elem.send_keys("dj andré marques manda AQUELE ao vivo")
+            time.sleep(2)
+            elem.send_keys(Keys.RETURN)  # aperta enter
+            time.sleep(6)
+            break
+    # driver.close()  # TODO descomente esta linha para fechar o navegador assim que o script terminar de rodar
 
 
 if __name__ == '__main__':
