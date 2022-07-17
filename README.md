@@ -9,23 +9,28 @@
 
 ## Introdução
 
-Selenium é uma biblioteca escrita em Python para automatização de testes 
+Selenium é uma biblioteca escrita em Python para automação de testes 
 unitários. Quando construímos sites para Web (usando as tecnologias HTML, CSS e
-Javascript), por vezes precisamos testar se as funcionalidades estão funcionando
-corretamente. Por exemplo, quando apertamos o botão de login no site, ele 
+Javascript), por vezes precisamos testar se os itens da interface gráfica estão 
+funcionando. Por exemplo, quando apertamos o botão de login no site, ele 
 realmente faz login?
 
-Para estas tarefas, podemos usar selenium, que automatiza o processo de testagem,
-e evita que testadores humanos precisem fazer este trabalho monótono e cansativo.
+Foi para evitar que as empresas gastem dinheiro com testadores humanos (pessoas
+que ficam clicando em todos os lugares de um site, sem parar, por dias a fio)
+que selenium foi proposto.
 
-Por manipular a parte gráfica de uma página Web, também é possível usar selenium
-para programar _web crawlers_, programas de computador que vasculham sites em 
-busca de coletar informações.
+Dado que selenium manipula a parte gráfica dos sites da Web através do DOM - 
+[Document Object Model](
+https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction),
+também é possível utilizá-lo para programar _web crawlers_, programas de 
+computador que vasculham sites coletando informações.
 
-Selenium faz uso do DOM - [Document Object Model](
-https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction)
-para manipular as páginas Web. É possível usar o DOM a partir de qualquer 
-navegador, abrindo a aba console, com a tecla F12.
+(**nota rápida:** DOM é a maneira como páginas Web são organizadas, de maneira 
+que programas consigam interagir com elas, como por exemplo um script programado
+em Javascript, ou o próprio selenium).
+
+É possível usar o DOM a partir de qualquer navegador, abrindo as ferramentas
+de desenvolvedor (geralmente a tecla F12), e selecionando a aba _console_.
 
 ## Instalação
 
@@ -34,7 +39,8 @@ para qualquer código-fonte que você venha a desenvolver que use a biblioteca
 selenium.
 
 1. Clone este repositório na sua máquina
-2. [Crie um ambiente virtual para trabalhar](https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md)
+2. [Crie um ambiente virtual do anaconda para trabalhar](
+   https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md)
 3. Instale a bibloteca _selenium_: `conda install selenium --yes`
 4. Baixe o [GeckoDriver](https://github.com/mozilla/geckodriver/releases),
    na versão do seu sistema operacional (muito provavelmente Windows, então
@@ -42,10 +48,12 @@ selenium.
    e coloque-o na pasta onde está o script que você vai rodar (por exemplo,
    dentro de `atividades` para os exercícios, ou na pasta principal para 
    `dragon_ball.py`)
+   * Você também pode colocar GeckoDriver em qualquer pasta, e adicionar o caminho
+     para o executável no PATH do sistema.
 
 ## Métodos de busca
 
-Quando trabalhando com selenium, existem os seguintes [métodos] para buscar itens
+Quando trabalhando com selenium, existem os seguintes métodos para buscar itens
 numa página web:
 
 * `driver.find_element_by_id`
@@ -163,7 +171,7 @@ if __name__ == '__main__':
 
 ```
 
-O código está disponível no arquivo [dragon_ball.py](dragon_ball.py)
+O código está disponível no arquivo [dragon_ball.py](dragon_ball.py).
 
 ## Exercícios
 
