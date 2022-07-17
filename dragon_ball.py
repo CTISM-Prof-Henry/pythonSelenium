@@ -1,13 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import time
 import os
 
 def main():
-    if os.name == 'nt':
-        path = './geckodriver.exe'
-    else:
-        path = './geckodriver'
+    if os.name == 'nt':  # se o sistema operacional for windows
+        path = './geckodriver.exe'  # o executável é .exe
+    else:  # se o sistema operacional for linux ou mac
+        path = './geckodriver'  # o executável não tem extensão
 
     # usar with garante que o método driver.close() será chamado,
     # mesmo que uma exceção ocorra no meio do código

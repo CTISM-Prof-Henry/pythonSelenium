@@ -175,16 +175,16 @@ O código está disponível no arquivo [dragon_ball.py](dragon_ball.py).
 
 ## Exercícios
 
-1. Execute o script [atividades/example_01.py](atividades/example_01.py), a
+1. Execute o script [atividades/exemplo_01.py](atividades/exemplo_01.py), a
    partir da pasta `atividades`
     * O que acontece quando o código é executado?
-2. Execute o script [atividades/example_02.py](atividades/example_02.py).
+2. Execute o script [atividades/exemplo_02.py](atividades/exemplo_02.py).
     * Qual a diferença dele para o exemplo_01?
     * Abra a página do [Google](https://google.com.br). Sobre o botão 
       "Pesquisa Google", clique com o botão direito e selecione a opção 
       "Inspecionar". No console que se abre, na aba "Elements", procure pela 
       propriedade `value`. O que está escrito nesta propriedade?
-      Como isto se relaciona com o que está escrito no código do example_02?
+      Como isto se relaciona com o que está escrito no código do exemplo_02?
 3. Descomente o comentário do exemplo_02 da linha 25. Execute o código novamente. 
    Qual a mensagem de erro que aparece no console? Por que isso ocorre?
 4. Por que os programadores que fazem testes com Selenium enchem o código-fonte 
