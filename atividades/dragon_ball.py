@@ -1,6 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import os
+import time
+
 
 def main():
     if os.name == 'nt':  # se o sistema operacional for windows
@@ -50,6 +51,7 @@ def main():
         elements = driver.find_elements_by_xpath('/html/body/ul/li')  
         for some in elements:
             print(some.text)
+        time.sleep(10)  # dorme uns 10 segundos, para dar tempo de ver a página
 
 
 if __name__ == '__main__':

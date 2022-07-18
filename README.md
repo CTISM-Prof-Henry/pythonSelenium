@@ -40,16 +40,18 @@ selenium.
 
 1. Clone este repositório na sua máquina
 2. [Crie um ambiente virtual do anaconda para trabalhar](
-   https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md)
-3. Instale a bibloteca _selenium_: `conda install selenium --yes`
+   https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md#criando-pela-linha-de-comando)
+3. Após ter criado o ambiente virtual e o ativado, instale
+   o _selenium_: `conda install selenium --yes`
 4. Baixe o [GeckoDriver](https://github.com/mozilla/geckodriver/releases),
    na versão do seu sistema operacional (muito provavelmente Windows, então
-   será o arquivo que termina com `win64.zip`)
+   será o arquivo que termina com `win64.zip`, na seção **Assets**)
    e coloque-o na pasta onde está o script que você vai rodar (por exemplo,
-   dentro de `atividades` para os exercícios, ou na pasta principal para 
-   `dragon_ball.py`)
+   dentro de `atividades` para os exercícios)
    * Você também pode colocar GeckoDriver em qualquer pasta, e adicionar o caminho
      para o executável no PATH do sistema.
+5. Para executar os códigos-fontes, [abra a pasta deste repositório no Pycharm.](
+   https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md#usando-pelo-pycharm)
 
 ## Métodos de busca
 
@@ -116,62 +118,63 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 
-def main():
-    if os.name == 'nt':
-        path = './geckodriver.exe'
-    else:
-        path = './geckodriver'
 
-    # usar with garante que o método driver.close() será chamado,
-    # mesmo que uma exceção ocorra no meio do código
-    # isso evita que, quando fazemos testes e o programa dá erro,
-    # fique uma instância do firefox aberta
-    with webdriver.Firefox(executable_path=path) as driver:
-        # abre uma instância do firefox na página dada
-        driver.get("file://" + os.path.join(os.getcwd(), 'dragon_ball.html'))  
-        
-        print('-----------------------------------------------------')
-        print('recuperando um elemento com find_element_by_tag_name:')
-        print('-----------------------------------------------------')
-        # pega apenas o primeiro <p> da página
-        element = driver.find_element_by_tag_name("p")  
-        print(element.text)  # imprime o texto do primeiro paraǵrafo
-        print('-----------------------------------------------------------')
-        print('recuperando vários elementos com find_elements_by_tag_name:')
-        print('-----------------------------------------------------------')
-        # pega todos os <p> da página
-        elements = driver.find_elements_by_tag_name("p")  
-        # percorre todos os <p> da página e imprime seu texto
-        for some in elements:  
-            print(some.text)  
-        print('-------------------------------------------------------------')
-        print('recuperando vários elementos com find_elements_by_class_name:')
-        print('-------------------------------------------------------------')
-        # pega todos os <p> da página
-        elements = driver.find_elements_by_class_name("strait")  
-        for some in elements:  
-            print(some.text)  
-        print('-----------------------------------------------')
-        print('recuperando um elemento com find_element_by_id:')
-        print('-----------------------------------------------')
-        element = driver.find_element_by_id("lista")
-        print('o elemento com id \'lista\' tem a tag <%s>' % (element.tag_name))
-        print('-------------------------------------------------')
-        print('recuperando elementos com find_elements_by_xpath:')
-        print('-------------------------------------------------')
-        # pega todos os elementos li seguem o xpath dado - repare
-        # que isto tem a ver com a hierarquia dos elementos html
-        elements = driver.find_elements_by_xpath('/html/body/ul/li')  
-        for some in elements:
-            print(some.text)
+def main():
+   if os.name == 'nt':
+      path = './geckodriver.exe'
+   else:
+      path = './geckodriver'
+
+   # usar with garante que o método driver.close() será chamado,
+   # mesmo que uma exceção ocorra no meio do código
+   # isso evita que, quando fazemos testes e o programa dá erro,
+   # fique uma instância do firefox aberta
+   with webdriver.Firefox(executable_path=path) as driver:
+      # abre uma instância do firefox na página dada
+      driver.get("file://" + os.path.join(os.getcwd(), 'atividades/dragon_ball.html'))
+
+      print('-----------------------------------------------------')
+      print('recuperando um elemento com find_element_by_tag_name:')
+      print('-----------------------------------------------------')
+      # pega apenas o primeiro <p> da página
+      element = driver.find_element_by_tag_name("p")
+      print(element.text)  # imprime o texto do primeiro paraǵrafo
+      print('-----------------------------------------------------------')
+      print('recuperando vários elementos com find_elements_by_tag_name:')
+      print('-----------------------------------------------------------')
+      # pega todos os <p> da página
+      elements = driver.find_elements_by_tag_name("p")
+      # percorre todos os <p> da página e imprime seu texto
+      for some in elements:
+         print(some.text)
+      print('-------------------------------------------------------------')
+      print('recuperando vários elementos com find_elements_by_class_name:')
+      print('-------------------------------------------------------------')
+      # pega todos os <p> da página
+      elements = driver.find_elements_by_class_name("strait")
+      for some in elements:
+         print(some.text)
+      print('-----------------------------------------------')
+      print('recuperando um elemento com find_element_by_id:')
+      print('-----------------------------------------------')
+      element = driver.find_element_by_id("lista")
+      print('o elemento com id \'lista\' tem a tag <%s>' % (element.tag_name))
+      print('-------------------------------------------------')
+      print('recuperando elementos com find_elements_by_xpath:')
+      print('-------------------------------------------------')
+      # pega todos os elementos li seguem o xpath dado - repare
+      # que isto tem a ver com a hierarquia dos elementos html
+      elements = driver.find_elements_by_xpath('/html/body/ul/li')
+      for some in elements:
+         print(some.text)
 
 
 if __name__ == '__main__':
-    main()
+   main()
 
 ```
 
-O código está disponível no arquivo [dragon_ball.py](dragon_ball.py).
+O código está disponível no arquivo [dragon_ball.py](atividades/dragon_ball.py).
 
 ## Exercícios
 
