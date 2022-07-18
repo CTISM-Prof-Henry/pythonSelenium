@@ -181,7 +181,7 @@ if __name__ == '__main__':
 
 A saída deste script é 
 
-```bash
+```
 -----------------------------------------------------
 recuperando um elemento com find_element_by_tag_name:
 -----------------------------------------------------
