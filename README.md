@@ -47,7 +47,7 @@ selenium.
    na versão do seu sistema operacional (muito provavelmente Windows, então
    será o arquivo que termina com `win64.zip`, na seção **Assets**)
    e coloque-o na pasta onde está o script que você vai rodar (por exemplo,
-   dentro de `atividades` para os exercícios)
+   dentro da pasta `atividades` para os exercícios)
    * Você também pode colocar GeckoDriver em qualquer pasta, e adicionar o caminho
      para o executável no PATH do sistema.
 5. Para executar os códigos-fontes, [abra a pasta deste repositório no Pycharm.](
@@ -67,7 +67,11 @@ Existem outras maneiras, mas estas são as mais usadas.
 [Esta página](https://selenium-python.readthedocs.io/locating-elements.html) 
 (em inglês) explica em maiores detalhes todos os métodos.
 
-Considere a página HTML mostrada abaixo, `dragon_ball.html`:
+Considere a página HTML abaixo, que está definida no arquivo [dragon_ball.html](atividades/dragon_ball.html):
+
+![](imagens/dragonball_render.png)
+
+O código fonte desta página é 
 
 ```html
 <!DOCTYPE html>
@@ -110,7 +114,8 @@ publicados pela editora Shueisha.
 </html>
 ```
 
-O seguinte código em Python recupera diversos itens dela:
+Para navegar pelos diversos elementos HTML desta página, o seguinte código-fonte escrito 
+em Python é usado (disponível em [dragon_ball.py](atividades/dragon_ball.py)):
 
 ```python
 from selenium import webdriver
@@ -167,14 +172,56 @@ def main():
       elements = driver.find_elements_by_xpath('/html/body/ul/li')
       for some in elements:
          print(some.text)
+      time.sleep(10)  # dorme uns 10 segundos, para dar tempo de ver a página
 
 
 if __name__ == '__main__':
    main()
-
 ```
 
-O código está disponível no arquivo [dragon_ball.py](atividades/dragon_ball.py).
+A saída deste script é 
+
+```bash
+-----------------------------------------------------
+recuperando um elemento com find_element_by_tag_name:
+-----------------------------------------------------
+Dragon Ball é uma franquia de mídia japonesa criada por Akira Toriyama. 
+Originalmente iniciada com uma série de mangá escrita e ilustrada por 
+Toriyama, foi serializada em capítulos na revista Weekly Shonen Jump de
+1984 a 1995. Os 519 capítulos foram compilados em 42 volumes e publicados
+pela editora Shueisha.
+-----------------------------------------------------------
+recuperando vários elementos com find_elements_by_tag_name:
+-----------------------------------------------------------
+Dragon Ball é uma franquia de mídia japonesa criada por Akira Toriyama. 
+Originalmente iniciada com uma série de mangá escrita e ilustrada por 
+Toriyama, foi serializada em capítulos na revista Weekly Shonen Jump de
+1984 a 1995. Os 519 capítulos foram compilados em 42 volumes e publicados
+pela editora Shueisha.
+Para saber mais, acesse o link na Wikipédia.
+-------------------------------------------------------------
+recuperando vários elementos com find_elements_by_class_name:
+-------------------------------------------------------------
+Dragon Ball é uma franquia de mídia japonesa criada por Akira Toriyama. 
+Originalmente iniciada com uma série de mangá escrita e ilustrada por 
+Toriyama, foi serializada em capítulos na revista Weekly Shonen Jump de
+1984 a 1995. Os 519 capítulos foram compilados em 42 volumes e publicados
+pela editora Shueisha.
+
+Foi inspirado por um mangá que Toriyama escreveu antes, Dragon Boy
+Dragon Ball Z se chama assim pois Toriyama queria que a série terminasse
+Kamehameha é o nome do primeiro rei do Havaí.
+-----------------------------------------------
+recuperando um elemento com find_element_by_id:
+-----------------------------------------------
+o elemento com id 'lista' tem a tag <ul>
+-------------------------------------------------
+recuperando elementos com find_elements_by_xpath:
+-------------------------------------------------
+Foi inspirado por um mangá que Toriyama escreveu antes, Dragon Boy
+Dragon Ball Z se chama assim pois Toriyama queria que a série terminasse
+Kamehameha é o nome do primeiro rei do Havaí.
+```
 
 ## Exercícios
 
