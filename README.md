@@ -41,8 +41,10 @@ selenium.
 1. Clone este repositório na sua máquina
 2. [Crie um ambiente virtual do anaconda para trabalhar](
    https://github.com/CTISM-Prof-Henry/pythonEssentials/blob/main/chapters/venvs.md#criando-pela-linha-de-comando)
-3. Após ter criado o ambiente virtual e o ativado, instale
-   o _selenium_: `conda install selenium --yes`
+3. Após ter criado o ambiente virtual e o ativado, instale as bibliotecas `pip` e `selenium`:
+   o _selenium_: `conda install pip selenium==3.141.0 --yes`
+   * Você pode instalar usando o arquivo `requirements.txt` também: 
+   `conda install --file atividades/requirements.txt --yes`
 4. Baixe o [GeckoDriver](https://github.com/mozilla/geckodriver/releases),
    na versão do seu sistema operacional (muito provavelmente Windows, então
    será o arquivo que termina com `win64.zip`, na seção **Assets**)
